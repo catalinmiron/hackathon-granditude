@@ -1,5 +1,5 @@
 import React, { PropTypes } from "react";
-import TransitionGroup from "react/lib/ReactCSSTransitionGroup";
+import TransitionGroup from "react-addons-css-transition-group";
 
 import{ RouteHandler } from "react-router";
 
@@ -54,7 +54,7 @@ const App = React.createClass({
       <div>
         <Navbar brand="React Koa Gulp Mongoose Mocha Demo" />
           <div className="transition-crop main-container" style={{ minHeight: this.props.height }}>
-            <TransitionGroup transitionName="transition">
+            <TransitionGroup transitionName="transition" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
               <RouteHandler key={key} />
             </TransitionGroup>
           </div>

@@ -1,5 +1,6 @@
 import React, { PropTypes } from "react";
-import TransitionGroup from "react/lib/ReactCSSTransitionGroup";
+import ReactDOM from "react-dom"
+import TransitionGroup from "react-addons-css-transition-group";
 import Router, { Route, DefaultRoute, NotFoundRoute, Redirect } from "react-router";
 
 import Navbar from "./components/navbar";
@@ -37,5 +38,5 @@ const routes = (
 );
 
 Router.run(routes, Router.HashLocation, (Handler) => {
-  React.render(<Handler/>, container);
+  ReactDOM.render(<Handler/>, container);
 });

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { Col,Input, Button, Row } from "react-bootstrap";
 import request from "superagent";
 import Loader from "react-loader";
@@ -62,6 +63,7 @@ export default class Profile extends Component {
 
   handleSubmit(e){
     e.preventDefault();
+    debugger;
     const description = this.refs.description.getValue();
     const location = this.refs.location.getValue();
     const isPublic = this.refs.isPublic.getChecked();
@@ -101,7 +103,7 @@ export default class Profile extends Component {
           <Input type="text" ref="username" placeholder="username" label="Username" value={currentUser.id}  disabled />
           <Input type="text" ref="location" placeholder="location" label="location" />
           <Input type="textarea" ref="description" label="description" placeholder="description" />
-          <Input type="checkbox" ref="isPublic" label="Public?" checked />
+          <Input type="checkbox" ref="isPublic" label="Public?" />
           <Button type="submit" bsStyle="success" className="pull-right">Publish</Button>
         </form>
         <Timeline posts={currentUserPosts.posts} />
